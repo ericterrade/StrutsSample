@@ -7,7 +7,7 @@
 
 
 	<constant name="struts.devMode" value="true" />
-
+	<constant name="struts.custom.i18n.resources" value="applicationResources"/>
 	<package name="default" namespace="/" extends="struts-default">
 <!-- 		<action name="hello"> -->
 <!-- 			<result>/pages/hello.jsp</result> -->
