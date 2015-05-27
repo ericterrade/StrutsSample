@@ -1,0 +1,28 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+       "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+
+	<field name="contact.username">
+		<field-validator type="requiredstring">
+			<message>Le Champ username est manquant</message>
+		</field-validator>
+
+	</field>
+
+	<field name="contact.password">
+		<field-validator type="requiredstring">
+			<message>Le Champ password est maquant</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">8</param>
+			<param name="minLength">4</param>
+			<message>Le champ password doit être compris entre ${minLength} et
+				${maxLength}
+			</message>
+		</field-validator>
+
+	</field>
+
+</validators>
+       
