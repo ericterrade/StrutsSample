@@ -5,7 +5,7 @@
 
 	<field name="contact.username">
 		<field-validator type="requiredstring">
-			<message>Le Champ username est manquant</message>
+			<message key="error.username.empty"/>
 		</field-validator>
 
 	</field>

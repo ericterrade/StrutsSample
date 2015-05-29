@@ -1,7 +1,9 @@
 package fr.treeptik.strutssample.action;
 
+import java.util.Locale;
 import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.dispatcher.SessionMap;
@@ -20,6 +22,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	private SessionMap<String, Object> session;
 
+
+
+	private String localeValue;
+	
 	public Map<String, Object> getSession() {
 		return session;
 	}
@@ -56,12 +62,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	@Action(value = "/login", results = @Result(name = "success", location = "/pages/login-success.jsp"))
 	public String getLoginSuccess() {
 		session.put("USER", contact);
+		//ServletActionContext.getContext().setLocale(new Locale(localeValue));
 		addActionMessage("Vous avez bien été identifié ! "
 				+ contact.getUsername());
 		return SUCCESS;
 
 	}
+	public String getLocaleValue() {
+		return localeValue;
+	}
 
+	public void setLocaleValue(String localeValue) {
+		this.localeValue = localeValue;
+	}
 	// @Override
 	// public String execute() throws Exception {
 	// session.put("USER", contact);
